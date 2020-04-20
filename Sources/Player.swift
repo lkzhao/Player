@@ -216,18 +216,7 @@ open class Player: UIViewController {
     }
 
     /// Playback automatically loops continuously when true.
-    open var playbackLoops: Bool {
-        get {
-            return self._avplayer.actionAtItemEnd == .none
-        }
-        set {
-            if newValue {
-                self._avplayer.actionAtItemEnd = .none
-            } else {
-                self._avplayer.actionAtItemEnd = .pause
-            }
-        }
-    }
+    open var playbackLoops: Bool = false
 
     /// Playback freezes on last frame frame when true and does not reset seek position timestamp..
     open var playbackFreezesAtEnd: Bool = false
